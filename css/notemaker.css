@@ -1,0 +1,49 @@
+
+
+.topic_area {
+    position: absolute;
+    width: 95%;
+    height: 50px;
+    border: 1px solid gray;
+    top: 0px;
+}
+
+.sub_topic_list_area {
+    width: 95%;
+    position: absolute;
+    height: 170px;
+    border: 1px solid blue;
+    top: 58px;
+
+    overflow: hidden;
+
+    z-index: 0;
+    -webkit-overflow-scrolling: touch;
+}
+
+.direct_note_list_area {
+    width: 95%;
+    position: absolute;
+    height: 170px;
+    border: 1px solid orange;
+    top: 234px;
+}
+
+.quick_text_area {
+    width: 95%;
+    position: absolute;
+    height: 357px;
+    border: 1px solid pink;
+    top: 409px;
+}
+
+#list{
+    font-size: 1.1em;
+    height: 100%;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+#list li{
+    border-bottom: 1px solid #e7e7e7;
+    padding: 0.6em 0.3em;
+}
