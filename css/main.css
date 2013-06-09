@@ -42,7 +42,7 @@ html,body {
 	src: url('timeburner_regular.ttf');
 }
 
-.notemaker_wrapper {
+.page {
     position:relative;
     z-index:1;
     width:100%;

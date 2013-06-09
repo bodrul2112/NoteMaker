@@ -1,0 +1,4 @@
+
+to start jetty:
+
+java -jar jtty.jar 8080 .
