@@ -11,6 +11,11 @@ define(["thirdparty/jquery", "services/TemplateService"], function (jQuery, tpl)
     Topic.prototype.initialise = function() {
         this.m_eElement = tpl.getTemplate('.topic');
     }
+    
+    Topic.prototype.render = function() 
+    {
+
+    }
 
     Topic.prototype.getID = function() {
         return this.m_sID;

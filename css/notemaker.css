@@ -50,8 +50,11 @@
 }
 
 .list_item {
-    position:absolute;
     width:95%;
+	height: 50px;
+	/*
+	position:absolute;
     top:0px;
     left:0px;
+    */
 }

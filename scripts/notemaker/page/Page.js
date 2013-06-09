@@ -1,65 +1,59 @@
 define(["thirdparty/jquery",
         "services/TemplateService",
-        "notemaker/page/topic/Topic",
-        "notemaker/page/subtopic/SubTopic",
-        "notemaker/page/note/Note"
+        "notemaker/page/PageManager",
+        "notemaker/page/PageElements",
+        "notemaker/page/PageRenderer"
 
-        ], function (jQuery, tpl, Topic, SubTopic, Note) {
+        ], function (jQuery, tpl, PageManager, PageElements, PageRenderer) {
 
-    var Page = function () {
-
-        this.m_sTopic;
-        this.m_pSubTopics = [];
-        this.m_pNotes = [];
-    }
-
-    Page.prototype.getElement = function () {
-        return this.m_eElement;
-    }
-
-    Page.prototype.loadMainTopic = function() {
-
-        //TODO: loading mock data, load from db later
-        this.m_sTopic = "Main";
-    }
-
-    Page.prototype.loadTopic = function() {
-
-    }
-
-    Page.prototype.loadSubTopics = function()
+    var Page = function () 
     {
-        //TODO: loading mock data, load from db later
-        for(var i=0; i<10; i++)
-        {
-            this.m_pSubTopics.push(new SubTopic("id"+i, "SubTopic " + i));
-        }
+        this.m_oPageManager = new PageManager();
+        this.m_oPageElements = new PageElements();
+        this.m_oPageRenderer = new PageRenderer();
+        
+        this.initialise();
     }
-
-    Page.prototype.addSubTopic = function() {
-
-    }
-
-    Page.prototype.loadNotes = function()
+    
+    Page.prototype.initialise = function( eNoteMakerContainer ) 
     {
-        for(var i=0; i<10; i++)
-        {
-            this.m_pSubTopics.push(new Note("id"+i, "SubTopic " + i));
-        }
+    	this.m_oPageManager.loadMainTopic( this );
+    	this.m_oPageManager.loadSubTopics( this );
+    	this.m_oPageManager.loadNotes( this );
     }
-
-    Page.prototype.addNote = function() {
+    
+    Page.prototype.loadMainPage = function( eNoteMakerContainer ) 
+    {
+    	this.m_oPageRenderer.renderPage( this );
+    }
+    
+    Page.prototype.loadMainPage = function( eNoteMakerContainer ) 
+    {
+    	this.m_oPageRenderer.renderPage( this );
+    }
+    
+    Page.prototype.render = function( eNoteMakerContainer ) 
+    {
+    	this.m_oPageRenderer.renderPage( this );
+    }
+    
+    Page.prototype._renderWithAnimation = function() 
+    {
 
     }
-
-    Page.prototype.render = function( eNoteMakerContainer ) {
-
+    
+    /** GETTERS **/
+    
+    Page.prototype.getPageManager = function() 
+    {
+    	return this.m_oPageManager;
     }
-
-    Page.prototype._renderWithAnimation = function() {
-
+    
+    Page.prototype.getPageElements = function() 
+    {
+    	return this.m_oPageElements;
     }
-
+    
     return Page;
 
 });

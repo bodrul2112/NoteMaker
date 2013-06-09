@@ -50,6 +50,11 @@ define(["thirdparty/jquery", "services/TemplateService"], function (jQuery, tpl)
     Note.prototype.setParentAndSave = function() {
 
     }
+    
+    Note.prototype.render = function() {
+
+    }
+
 
     return Note;
 });

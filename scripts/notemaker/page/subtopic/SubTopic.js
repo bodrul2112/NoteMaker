@@ -23,6 +23,10 @@ define(["thirdparty/jquery", "services/TemplateService"], function (jQuery, tpl)
     SubTopic.prototype.getElement = function () {
         return this.m_eElement;
     }
+    
+    SubTopic.prototype.render = function () {
+    	//TODO:
+    }
 
     return SubTopic;
 

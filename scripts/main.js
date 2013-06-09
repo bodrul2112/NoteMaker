@@ -1,12 +1,17 @@
 
 
-require( ["plugins/domReady","thirdparty/jquery"], function(domReady, jQuery){
+require( ["plugins/domReady","thirdparty/jquery","notemaker/NoteMaker"], 
+		function(domReady, jQuery, NoteMaker){
 	
 	domReady(function(){
 		
-		require(["thirdparty/jquery"], function(jQuery) {
+		require(["thirdparty/jquery", "notemaker/NoteMaker"], function(jQuery, NoteMaker) {
 
+			var oNoteMaker = new NoteMaker();
+			oNoteMaker.render();
+			
 			console.log("test");
+			
 		});
 		
 	});
