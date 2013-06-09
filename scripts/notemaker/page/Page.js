@@ -1,4 +1,10 @@
-define(["thirdparty/jquery", "services/TemplateService"], function (jQuery, tpl) {
+define(["thirdparty/jquery",
+        "services/TemplateService",
+        "notemaker/page/topic/Topic",
+        "notemaker/page/subtopic/SubTopic",
+        "notemaker/page/note/Note"
+
+        ], function (jQuery, tpl, Topic, SubTopic, Note) {
 
     var Page = function () {
 
@@ -21,21 +27,25 @@ define(["thirdparty/jquery", "services/TemplateService"], function (jQuery, tpl)
 
     }
 
-    Page.prototype.addTopic = function() {
-
-    }
-
-    Page.prototype.loadSubTopics = function() {
+    Page.prototype.loadSubTopics = function()
+    {
         //TODO: loading mock data, load from db later
-        this.m_pSubTopics.push()
+        for(var i=0; i<10; i++)
+        {
+            this.m_pSubTopics.push(new SubTopic("id"+i, "SubTopic " + i));
+        }
     }
 
     Page.prototype.addSubTopic = function() {
 
     }
 
-    Page.prototype.loadNotes = function() {
-
+    Page.prototype.loadNotes = function()
+    {
+        for(var i=0; i<10; i++)
+        {
+            this.m_pSubTopics.push(new Note("id"+i, "SubTopic " + i));
+        }
     }
 
     Page.prototype.addNote = function() {

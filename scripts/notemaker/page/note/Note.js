@@ -1,16 +1,38 @@
 define(["thirdparty/jquery", "services/TemplateService"], function (jQuery, tpl) {
 
-    var Note = function ( sParent ) {
-        this.m_sText = "";
-        this.m_sParent = sParent;
+    var Note = function ( sID, oParentTopic, sText )
+    {
+        this.m_sID = sID;
+        this.m_oParentTopic = oParentTopic;
+        this.m_sText = sText;
+
+        this.m_eElement;
+
+        this.initialise();
+    }
+
+    Note.prototype.initialise = function() {
+        this.m_eElement = tpl.getTemplate('.note');
     }
 
     Note.prototype.getElement = function () {
         return this.m_eElement;
     }
 
-    Note.prototype.load = function() {
+    Note.prototype.getID = function() {
+        return this.m_sID;
+    }
 
+    Note.prototype.getParentTopic = function() {
+        return this.m_oParentTopic;
+    }
+
+    Note.prototype.getText = function() {
+        return this.m_sText;
+    }
+
+    Note.prototype.load = function() {
+        //TODO: probably not needed here
     }
 
     Note.prototype.save = function() {
@@ -19,6 +41,10 @@ define(["thirdparty/jquery", "services/TemplateService"], function (jQuery, tpl)
 
     Note.prototype.clear = function() {
 
+    }
+
+    Note.prototype.remove = function() {
+        this.m_eElement.remove();
     }
 
     Note.prototype.setParentAndSave = function() {

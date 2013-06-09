@@ -1,6 +1,6 @@
 
 
-.topic_area {
+.topics {
     position: absolute;
     width: 95%;
     height: 50px;
@@ -8,7 +8,7 @@
     top: 0px;
 }
 
-.sub_topic_list_area {
+.sub_topics {
     width: 95%;
     position: absolute;
     height: 170px;
@@ -21,7 +21,7 @@
     -webkit-overflow-scrolling: touch;
 }
 
-.direct_note_list_area {
+.notes {
     width: 95%;
     position: absolute;
     height: 170px;
