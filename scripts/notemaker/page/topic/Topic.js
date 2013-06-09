@@ -6,17 +6,14 @@ define(["thirdparty/jquery", "services/TemplateService"], function (jQuery, tpl)
         this.m_sName = sName;
 
         this.m_eElement;
+        
+        this.initialise();
     }
 
     Topic.prototype.initialise = function() {
         this.m_eElement = tpl.getTemplate('.topic');
     }
     
-    Topic.prototype.render = function() 
-    {
-
-    }
-
     Topic.prototype.getID = function() {
         return this.m_sID;
     }
@@ -31,6 +28,11 @@ define(["thirdparty/jquery", "services/TemplateService"], function (jQuery, tpl)
 
     Topic.prototype.remove = function() {
 
+    }
+    
+    Topic.prototype.render = function() 
+    {
+    	this.m_eElement.find('.name').text( this.m_sName );
     }
 
     return Topic;

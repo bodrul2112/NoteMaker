@@ -41,7 +41,7 @@ define(["thirdparty/jquery",
     {
         for(var i=0; i<10; i++)
         {
-            this.m_pNotes.push(new Note("id"+i, "SubTopic " + i));
+            this.m_pNotes.push(new Note("id"+i, "Note " + i));
         }
     }
     

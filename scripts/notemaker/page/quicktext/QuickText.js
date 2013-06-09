@@ -4,7 +4,7 @@ define(["thirdparty/jquery", "services/TemplateService"], function (jQuery, tpl)
     {
     }
     
-    QuickText.prototype.renderPage = function( oPage ) 
+    QuickText.prototype.render = function( oPage ) 
     {
     	
     }

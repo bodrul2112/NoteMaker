@@ -9,9 +9,6 @@ require( ["plugins/domReady","thirdparty/jquery","notemaker/NoteMaker"],
 
 			var oNoteMaker = new NoteMaker();
 			oNoteMaker.render();
-			
-			console.log("test");
-			
 		});
 		
 	});

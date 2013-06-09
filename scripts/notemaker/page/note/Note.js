@@ -1,9 +1,8 @@
 define(["thirdparty/jquery", "services/TemplateService"], function (jQuery, tpl) {
 
-    var Note = function ( sID, oParentTopic, sText )
+    var Note = function ( sID, sText )
     {
         this.m_sID = sID;
-        this.m_oParentTopic = oParentTopic;
         this.m_sText = sText;
 
         this.m_eElement;
@@ -51,8 +50,9 @@ define(["thirdparty/jquery", "services/TemplateService"], function (jQuery, tpl)
 
     }
     
-    Note.prototype.render = function() {
-
+    Note.prototype.render = function() 
+    {
+    	this.m_eElement.find('.note_inner').text(this.m_sText);
     }
 
 

@@ -24,8 +24,9 @@ define(["thirdparty/jquery", "services/TemplateService"], function (jQuery, tpl)
         return this.m_eElement;
     }
     
-    SubTopic.prototype.render = function () {
-    	//TODO:
+    SubTopic.prototype.render = function () 
+    {
+    	this.m_eElement.find('.sub_topic_inner').text( this.m_sSubTopicName );
     }
 
     return SubTopic;
