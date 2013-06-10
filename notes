@@ -2,3 +2,33 @@
 to start jetty:
 
 java -jar jtty.jar 8080 .
+
+
+
+Stories:
+
+== Look and Feel ==
+- I want to see a main screen with the main topic header
+    - ux
+- I want to see a menu when I click on the menu button on the topic header
+    - ux
+- I want to see a main screen with sub topics
+    - ux
+- I want to see a main screen with notes
+    - ux
+- I want to see a main screen with quick text
+    - ux
+
+== Data : Mock ==
+- I want to load the main page with mock data
+- I want to add a new sub topic
+- I want to add a new note
+- I want to edit a note with quick text
+- I want to click on a subtopic and switch to that as the main topic
+
+== Data : Database ==
+- I want load the main page with database data
+- I want to add a new sub topic and save it to the database
+- I want to add a new note and save it to the database
+- I want to edit a new note and save the edits to the database
+
