@@ -1,36 +1,70 @@
 
+.page {
+    position:relative;
+    z-index:1;
+    width:355px;
+    height:100%;
+    overflow:hidden;
+}
 
 .page_item {
-	position: relative;
+	position: absolute;
 	float:left;
-    width: 95%;	
+    width: 350px;
     padding: 0px;
     margin: 0px;
+    overflow: hidden;
 }
 
 .topics {
-    height: 10%;
-    border: 1px solid gray;
+    height: 50px;
+}
+
+.topic {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+}
+
+.topic .topic_parts {
+    background-color: rgb(59,97,142);
+    position: absolute;
+    top: 0px;
+}
+
+.topic .previous_topic {
+    width: 50px;
+    height: 100%;
+}
+
+.topic .name {
+    left: 51px;
+    height: 100%;
+    width: 248px;
+}
+
+.topic .menu {
+    width: 50px;
+    height: 100%;
+    left: 300px;
 }
 
 .sub_topics {
     height: 20%;
-    border: 1px solid blue;
-
     overflow: hidden;
-
     z-index: 0;
     -webkit-overflow-scrolling: touch;
+    background-color: #DDD;
 }
 
 .notes {
     height: 20%;
-    border: 1px solid orange;
+    background-color: #CCC;
 }
 
 .quick_text_area {
     height: 50%;
-    border: 1px solid pink;
 }
 
 .list{
@@ -38,6 +72,7 @@
     height: 100%;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
+    width: 368px;
 }
 
 .list_item_wrapper {

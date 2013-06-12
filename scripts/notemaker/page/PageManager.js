@@ -31,7 +31,7 @@ define(["thirdparty/jquery",
     PageManager.prototype.loadSubTopics = function()
     {
         //TODO: loading mock data, load from db later
-        for(var i=0; i<10; i++)
+        for(var i=0; i<25; i++)
         {
             this.m_pSubTopics.push(new SubTopic("id"+i, "SubTopic " + i));
         }
@@ -39,7 +39,7 @@ define(["thirdparty/jquery",
 
     PageManager.prototype.loadNotes = function()
     {
-        for(var i=0; i<10; i++)
+        for(var i=0; i<25; i++)
         {
             this.m_pNotes.push(new Note("id"+i, "Note " + i));
         }

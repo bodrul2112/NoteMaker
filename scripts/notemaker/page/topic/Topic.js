@@ -27,7 +27,7 @@ define(["thirdparty/jquery", "services/TemplateService"], function (jQuery, tpl)
     }
 
     Topic.prototype.remove = function() {
-
+        this.m_eElement.remove();
     }
     
     Topic.prototype.render = function() 
