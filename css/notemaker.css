@@ -81,7 +81,7 @@
     height: 36px;
     width: 350px;
 
-    -webkit-transition: all 500ms linear;
+    -webkit-transition: all 100ms linear;
 }
 
 .sub_topic_inner:hover {
