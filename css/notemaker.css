@@ -1,23 +1,33 @@
 
 .page {
-    position:relative;
-    z-index:1;
-    width:355px;
-    height:100%;
-    overflow:hidden;
+    position: absolute;
+    left: 10px;
+    top: 0px;
+    z-index: 1;
+    width: 355px;
+    height: 100%;
+    overflow: hidden;
+    border-left: 2px solid rgb(201,137,9);
+    border-right: 2px solid rgb(59,97,142);
 }
 
 .page_item {
-	position: absolute;
-	float:left;
+    position: absolute;
+    float: left;
     width: 350px;
     padding: 0px;
     margin: 0px;
     overflow: hidden;
+    font-family: Georgia;
+    color: white;
+    line-height: 31px;
+    text-indent: 8px;
 }
 
 .topics {
-    height: 50px;
+    height: 40px;
+    width: 343px;
+    left: 3px;
 }
 
 .topic {
@@ -25,6 +35,7 @@
     width: 100%;
     position: absolute;
     top: 0px;
+    left: 5px;
 }
 
 .topic .topic_parts {
@@ -39,15 +50,16 @@
 }
 
 .topic .name {
-    left: 51px;
+    left: 52px;
     height: 100%;
-    width: 248px;
+    width: 235px;
+    font-size: 37px;
 }
 
 .topic .menu {
     width: 50px;
     height: 100%;
-    left: 300px;
+    left: 289px;
 }
 
 .sub_topics {
@@ -55,12 +67,42 @@
     overflow: hidden;
     z-index: 0;
     -webkit-overflow-scrolling: touch;
-    background-color: #DDD;
+    left: 5px;
+}
+
+.sub_topics .list {
+    height: 105%;
+}
+
+.sub_topic_inner, .note_inner {
+    background-color: rgb(59,97,142);
+    margin-left: 79px;
+    position: relative;
+    height: 36px;
+    width: 350px;
+
+    -webkit-transition: all 500ms linear;
+}
+
+.sub_topic_inner:hover {
+    background-color: rgba(59,97,142,0.5);
+    -webkit-transform: translate(-50px,0px);
+}
+
+.note_inner {
+    background-color: rgb(201,137,9);
+    margin-left: -82px;
+    text-align: right;
+    padding-right: 9px;
+}
+
+.note_inner:hover {
+    background-color: rgba(201,137,9,0.5);
+    -webkit-transform: translate(50px,0px);
 }
 
 .notes {
     height: 20%;
-    background-color: #CCC;
 }
 
 .quick_text_area {
@@ -82,10 +124,5 @@
 
 .list_item {
     width:95%;
-	height: 50px;
-	/*
-	position:absolute;
-    top:0px;
-    left:0px;
-    */
+	height: 44px;
 }

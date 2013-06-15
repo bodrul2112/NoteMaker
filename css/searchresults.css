@@ -1,0 +1,19 @@
+
+
+.search_results {
+    width: 250px;
+    height: 100%;
+    margin-left: 377px;
+}
+
+.search_results .navigator {
+    width: 10px;
+    height: 100%;
+    background-color: #DDD;
+}
+
+.search_result {
+
+
+}
+

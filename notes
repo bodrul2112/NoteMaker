@@ -97,3 +97,46 @@ MISC NOTES:
 
  - design
     - flat + css noise
+
+
+
+
+== older unsorted notes ==
+
+
+
+== ux ==
+- non conspicuous
+	- all grays
+	- small text
+	- grays
+	- information is emergent, 1 locus
+	-
+
+== graph ==
+
+increase and decrease the size of a note to define its importance
+
+== note ordering ==
+- date created
+- alpahbetical
+- date modified
+
+== modes ==
+- dropbox mode
+- google api mode
+
+
+tell the app which parts of the note to index and which bits to ignore
+define whats important and tell the indexer
+
+use the google api's to store notemaker notes into googles user databases
+perhaps google api allows some form of storage
+
+== initial additions ==
+- library list
+-
+
+== misc ease of user ==
+- for now have the server running locally
+- always have the comp running the server with the info
