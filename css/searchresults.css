@@ -3,17 +3,53 @@
 .search_results {
     width: 250px;
     height: 100%;
-    margin-left: 377px;
+    left: 377px;
+    overflow: hidden;
+    position: absolute;
 }
 
 .search_results .navigator {
     width: 10px;
     height: 100%;
-    background-color: #DDD;
+    background-color: #CCC;
 }
 
-.search_result {
-
-
+.search_item {
+    width: 240px;
+    height: 135px;
+    background-color: #CCC;
+    margin-top: 14px;
+    margin-left:-20px;
+    -webkit-transition: all 100ms cubic-bezier(0,0,0.25,1);
+    overflow: hidden;
 }
+
+.search_item:hover {
+    -webkit-transform: translate(20px,0px);
+}
+
+.search_item .triangle {
+    position: relative;
+    width: 0px;
+    height: 0px;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-right: 20px solid white;
+    margin-left: 221px;
+    top: 115px;
+}
+
+.search_results .list {
+    position: absolute;
+    top: 0px;
+    width: 258px;
+    height: 100%;
+    z-index: 1;
+    left: 9px;
+    -webkit-transition: all 100ms cubic-bezier(0,0,0.25,1);
+}
+
+
+
+
 

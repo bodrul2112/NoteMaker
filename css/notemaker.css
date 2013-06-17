@@ -78,14 +78,14 @@
     background-color: rgb(59,97,142);
     margin-left: 79px;
     position: relative;
-    height: 36px;
+    height: 26px;
     width: 350px;
 
-    -webkit-transition: all 100ms linear;
+    -webkit-transition: all 100ms cubic-bezier(0,0,0.25,1);
 }
 
 .sub_topic_inner:hover {
-    background-color: rgba(59,97,142,0.5);
+    /* background-color: rgba(59,97,142,0.5); */
     -webkit-transform: translate(-50px,0px);
 }
 
@@ -97,7 +97,7 @@
 }
 
 .note_inner:hover {
-    background-color: rgba(201,137,9,0.5);
+    /* background-color: rgba(201,137,9,0.5); */
     -webkit-transform: translate(50px,0px);
 }
 
@@ -124,5 +124,5 @@
 
 .list_item {
     width:95%;
-	height: 44px;
+	height: 27px;
 }
