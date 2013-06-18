@@ -27,11 +27,6 @@ define(["thirdparty/jquery",
     	this.m_oPageRenderer.renderPage( this );
     }
     
-    Page.prototype.loadMainPage = function( eNoteMakerContainer ) 
-    {
-    	this.m_oPageRenderer.renderPage( this );
-    }
-    
     Page.prototype.render = function( eNoteMakerContainer ) 
     {
     	this.m_oPageRenderer.renderPage( this );

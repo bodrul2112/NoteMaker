@@ -1,20 +1,22 @@
 
-define(["thirdparty/jquery","services/TemplateService", "notemaker/page/Page"], function(jQuery, tpl, Page) {
+define(["thirdparty/jquery",
+    "services/TemplateService",
+    "notemaker/page/Page",
+    "notemaker/searchresults/SearchResults"],
 
-    var NoteMaker = function( ) 
-    {
-        this.m_oPage = new Page();
-    }
+    function(jQuery, tpl, Page, SearchResults) {
 
-    NoteMaker.prototype.initialiseToMainPage = function() 
-    {
-        this.m_oPage.loadMainPage();
-    }
+        var NoteMaker = function( )
+        {
+            this.m_oPage = new Page();
+            this.m_oSearchResults = new SearchResults();
+        }
 
-    NoteMaker.prototype.render = function() 
-    {
-        this.m_oPage.render(this.m_eElement);
-    }
+        NoteMaker.prototype.render = function()
+        {
+            this.m_oPage.render(this.m_eElement);
+            this.m_oSearchResults.render(this.m_eElement);
+        }
 
-    return NoteMaker;
+        return NoteMaker;
 });

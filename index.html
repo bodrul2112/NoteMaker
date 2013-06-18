@@ -10,6 +10,7 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" type="text/css" href="css/notemaker.css">
 	<link rel="stylesheet" type="text/css" href="css/searchresults.css">
+	<link rel="stylesheet" type="text/css" href="css/slidingpages.css">
 
 	<script data-main="scripts/main.js" src="scripts/require.js"></script>
 
@@ -17,33 +18,53 @@
 
 <body>
 
-	<div class="page">
-		<div class="page_item topics">
-		</div>
-        <div class="page_item sub_topics">
-            <div class="list">
+    <div class="notemaker_wrapper">
+
+        <div class="page">
+            <div class="page_item topics">
+            </div>
+            <div class="page_item sub_topics">
+                <div class="list">
+                </div>
+            </div>
+
+            <div class="page_item notes">
+                <div class="list">
+                </div>
             </div>
         </div>
 
-        <div class="page_item notes">
-        	<div class="list">
-        	</div>
+        <div class="search_results">
+            <div class="navigator"> </div>
+            <div class="list">
+                <div class="search_item"><div class="triangle"></div></div>
+                <div class="search_item"><div class="triangle"></div></div>
+                <div class="search_item"><div class="triangle"></div></div>
+                <div class="search_item"><div class="triangle"></div></div>
+                <div class="search_item"><div class="triangle"></div></div>
+                <div class="search_item"><div class="triangle"></div></div>
+                <div class="search_item"><div class="triangle"></div></div>
+                <div class="search_item"><div class="triangle"></div></div>
+            </div>
         </div>
+
+        <div class="sliding_pages">
+            <div class="sliding_page sliding_page_one">
+                <div class="sliding_navigator"> </div>
+            </div>
+            <div class="sliding_page sliding_page_two">
+                <div class="sliding_navigator"> </div>
+            </div>
+            <div class="sliding_page sliding_page_three">
+                <div class="sliding_navigator"> </div>
+                <div class="content">
+                    <textarea class="input"></textarea>
+                </div>
+            </div>
+        </div>
+
     </div>
 
-    <div class="search_results">
-        <div class="navigator"> </div>
-        <div class="list">
-            <div class="search_item"><div class="triangle"></div></div>
-            <div class="search_item"><div class="triangle"></div></div>
-            <div class="search_item"><div class="triangle"></div></div>
-            <div class="search_item"><div class="triangle"></div></div>
-            <div class="search_item"><div class="triangle"></div></div>
-            <div class="search_item"><div class="triangle"></div></div>
-            <div class="search_item"><div class="triangle"></div></div>
-            <div class="search_item"><div class="triangle"></div></div>
-        </div>
-    </div>
 
     <div class="templates">
 

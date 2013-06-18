@@ -7,6 +7,10 @@ define(["thirdparty/jquery", "services/TemplateService"], function (jQuery, tpl)
     SearchResults.prototype.getElement = function () {
         return this.m_eElement;
     }
+    
+    SearchResults.prototype.render = function() {
+
+    }
 
     return SearchResults;
 
