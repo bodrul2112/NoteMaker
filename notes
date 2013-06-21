@@ -99,7 +99,10 @@ MISC NOTES:
     - flat + css noise
 
 
-
+-- misc --
+-- teeny tiny mode
+-- sql dump backup procedure test
+-- automated procedure? manual? multiple stores?
 
 == older unsorted notes ==
 
@@ -140,3 +143,91 @@ perhaps google api allows some form of storage
 == misc ease of user ==
 - for now have the server running locally
 - always have the comp running the server with the info
+
+
+
+== table structure ==
+
+
+Topic
+ID, Name, ParentTopic
+
+
+Note
+ID, Name, ParentTopic, Content, Hashtags
+
+
+get Main
+get * FROM Topic WHERE Name='MainStartXYZXYZ12345'  // NOTHING can have the topic MainStartXYZXYZ12345
+
+
+
+== display all topics ==
+
+Request: GET /notemaker/topic/?topicId='something'
+Result:
+    {
+        id: 1,
+        name: main,
+        subtopics_ids: [1,2,3,4],
+        subtopics_names: [a,b,c,d]
+    }
+SQL:
+- GET * FROM Topic WHERE ID=topicId
+
+
+== display all notes ==
+Request: GET /notemaker/notes/?topicId='something'
+Result:
+    {
+        id:1,
+        name: main,
+        notes_ids: [1,2,3,4],
+        notes_names: [a,b,c,d]
+    }
+SQL:
+- GET * FROM Note Where ID=topicId
+
+== display a single note ==
+Request: GET /notemaker/notes/?noteId='something'
+Result:
+    {
+        id:1,
+        name: note_1,
+        content: "lorem ipsum",
+        hashtags: "#tag1 #tag2"
+        privacyLevel: 1
+    }
+SQL:
+- GET * FROM Notes WHERE ID=noteId LIMIT 1
+
+== display graph ==
+Request: GET /notemaker/graph
+
+- add note
+    - update the note table
+
+- add topic
+    - update the topic table
+
+- edit note
+    - update the row content field for a note
+
+
+
+breadcrumb generation
+
+i am a node i know myself (i)
+
+i am a new node, i know my parent, on creation i wll create a breadcrumb path from my parents breadcrumb path to me i-n
+
+build bread crumb
+
+-1-2-6-7-9
+-i-n-j-k-f
+
+-- other ideas --
+
+
+
+
