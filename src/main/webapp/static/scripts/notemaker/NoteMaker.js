@@ -14,7 +14,7 @@ define(["thirdparty/jquery",
 
         NoteMaker.prototype.render = function()
         {
-            this.m_oPage.render(this.m_eElement);
+        	this.m_oPage.render(this.m_eElement);
             this.m_oSearchResults.render(this.m_eElement);
         }
 

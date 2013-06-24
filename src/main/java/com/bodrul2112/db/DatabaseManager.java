@@ -3,6 +3,7 @@ package com.bodrul2112.db;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import com.bodrul2112.db.dao.NotesDao;
 import com.bodrul2112.db.dao.TopicsDao;
 
 public class DatabaseManager
@@ -21,5 +22,10 @@ public class DatabaseManager
 	public TopicsDao getTopicsDao()
 	{
 		return new TopicsDao(emf);
+	}
+	
+	public NotesDao getNotesDao()
+	{
+		return new NotesDao(emf);
 	}
 }

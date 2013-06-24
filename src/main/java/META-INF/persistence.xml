@@ -9,6 +9,7 @@
 	  <provider>org.apache.openjpa.persistence.PersistenceProviderImpl</provider>
 	  
 	  <class>com.bodrul2112.db.entity.Topics</class>
+	  <class>com.bodrul2112.db.entity.Notes</class>
 	  
 		<properties>
 		  <property name="openjpa.ConnectionURL" value="jdbc:mysql://localhost:3306/notemaker"/>

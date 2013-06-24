@@ -24,6 +24,7 @@ define(["thirdparty/jquery",
     
     Page.prototype.loadMainPage = function( eNoteMakerContainer ) 
     {
+    	//TODO: dont think i use this
     	this.m_oPageRenderer.renderPage( this );
     }
     

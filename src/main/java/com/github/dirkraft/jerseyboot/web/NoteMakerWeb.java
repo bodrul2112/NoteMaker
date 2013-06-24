@@ -103,6 +103,7 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
 import com.bodrul2112.db.DatabaseManager;
+import com.bodrul2112.db.entity.Notes;
 import com.bodrul2112.db.entity.Topics;
 import com.github.dirkraft.jerseyboot.base.BaseJsonResource;
 
@@ -120,6 +121,15 @@ public class NoteMakerWeb extends BaseJsonResource {
 		
 		DatabaseManager db = DatabaseManager.INSTANCE;
         return db.getTopicsDao().findTopicsWithParent(topicId);
+    }
+	
+	@GET
+	@Path("/notes")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Notes> getNotes(@QueryParam("topicId") long topicId) {
+		
+		DatabaseManager db = DatabaseManager.INSTANCE;
+        return db.getNotesDao().findNotesWithParent(topicId);
     }
 	
 	@GET

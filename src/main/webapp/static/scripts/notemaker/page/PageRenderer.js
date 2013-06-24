@@ -23,8 +23,6 @@ define(["thirdparty/jquery", "services/TemplateService"], function (jQuery, tpl)
     	this._addElementsToPage( oPage );
     	this._renderElementsToPage( oPage );
     		
-    	;
-    		
     	this.m_oLastDrawnPage = oPage;
     }
     

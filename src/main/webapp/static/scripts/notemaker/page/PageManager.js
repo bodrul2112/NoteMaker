@@ -31,10 +31,18 @@ define(["thirdparty/jquery",
     PageManager.prototype.loadSubTopics = function()
     {
         //TODO: loading mock data, load from db later
-        for(var i=0; i<25; i++)
-        {
-            this.m_pSubTopics.push(new SubTopic("id"+i, "SubTopic " + i));
-        }
+    	
+    	$.getJSON("http://localhost:8080/notes/topics/?topicId=1",
+		   function(data) {
+    		
+		     alert(data.length);
+		     for(var i=0; i<data.length; i++)
+	         {
+		    	var mSubTopicData = data[i];
+	            this.m_pSubTopics.push(new SubTopic(mSubTopicData));
+	         }
+		     
+		   }.bind(this));
     }
 
     PageManager.prototype.loadNotes = function()
