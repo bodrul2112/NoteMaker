@@ -92,6 +92,7 @@
 
 package com.github.dirkraft.jerseyboot.web;
 
+import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -101,11 +102,26 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
+import com.bodrul2112.db.DatabaseManager;
+import com.bodrul2112.db.entity.Topics;
 import com.github.dirkraft.jerseyboot.base.BaseJsonResource;
 
-@Path("/notes")
+@Path("/notes/")
 public class NoteMakerWeb extends BaseJsonResource {
+	
+	public NoteMakerWeb()
+	{
+	}
 
+	@GET
+	@Path("/topics")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Topics> getTopics(@QueryParam("topicId") long topicId) {
+		
+		DatabaseManager db = DatabaseManager.INSTANCE;
+        return db.getTopicsDao().findTopicsWithParent(topicId);
+    }
+	
 	@GET
 	@Path("/query")
     @Produces(MediaType.APPLICATION_JSON)
