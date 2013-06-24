@@ -15,7 +15,7 @@ buildscript {
 apply plugin: 'fatjar'
 
 
-// ∏ change to your group, and rename the root directory to something other than 'jersey-bootstrap'
+// âˆ� change to your group, and rename the root directory to something other than 'jersey-bootstrap'
 group = 'com.github.dirkraft'
 version = '0.0.0-SNAPSHOT'
 
@@ -31,7 +31,7 @@ configurations {
     }
 
     // use commons-lang3 only
-    //all*.exclude group: 'commons-lang', module:'commons-lang', version:'2.6'
+    all*.exclude group: 'commons-lang', module:'commons-lang', version:'2.6'
 }
 
 
@@ -44,10 +44,10 @@ repositories {
 
 dependencies {
 
-	compile('org.hibernate:hibernate-core:4.1.9.Final')
+    compile('org.hibernate:hibernate-core:4.1.9.Final')
     compile('org.hibernate:hibernate-entitymanager:4.1.9.Final')
     compile('org.apache.openjpa:openjpa-persistence-jdbc:1.0.3')
-    compile('commons-lang:commons-lang:2.0')
+    //compile('commons-lang:commons-lang:2.0')
     compile('mysql:mysql-connector-java:5.1.25')
 
     // server components
@@ -64,7 +64,7 @@ dependencies {
     compile 'org.codehaus.jackson:jackson-mapper-asl:1.9.11'
 
     // utility components
-    //compile 'org.apache.commons:commons-lang3:3.1'
+    compile 'org.apache.commons:commons-lang3:3.1'
     compile 'com.google.guava:guava:13.0.1'
     compile 'com.github.rholder:guava-retrying:1.0.3'
     compile 'com.github.dirkraft:props-live:1.0.2'
@@ -87,7 +87,7 @@ fatJar {
         attributes 'SCM-Revision': git_proc.text.trim()
         attributes 'Timestamp': String.valueOf(System.currentTimeMillis())
         attributes 'Build-Host': InetAddress.localHost.hostName
-        // ∏ align the main class location
+        // âˆ� align the main class location
         attributes 'Main-Class': 'com.github.dirkraft.jerseyboot.RunServer'
     }
     exclude 'META-INF/*.SF'
