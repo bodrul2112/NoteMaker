@@ -31,7 +31,10 @@ public class Notes
     private String hashTags;
 	
 	@Column(name = "SpecialHashTags", nullable = true)
-    private String specialHashTags;
+	private String specialHashTags;
+
+	@Column(name = "Content", nullable = true)
+    private String content;
 
 	public long getId()
 	{
@@ -101,5 +104,15 @@ public class Notes
 	public void setSpecialHashTags(String specialHashTags)
 	{
 		this.specialHashTags = specialHashTags;
+	}
+
+	public String getContent()
+	{
+		return content;
+	}
+
+	public void setContent(String content)
+	{
+		this.content = content;
 	}
 }

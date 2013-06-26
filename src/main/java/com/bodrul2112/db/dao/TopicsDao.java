@@ -1,6 +1,8 @@
 package com.bodrul2112.db.dao;
 
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 import javax.persistence.EntityManagerFactory;
 
@@ -25,9 +27,9 @@ public class TopicsDao extends BaseDao
     }
     
     @SuppressWarnings("unchecked")
-    public List<Topics> findTopicsWithParent(long parentTopicId)
+    public Map<String, Topics> findTopicsWithParent(long parentTopicId)
     {
-    	// maybe use criteria in the end - faster, type safe, but slightly less readable
+    	Map<String, Topics> resultMap = new TreeMap<>();
     	List<Topics> resultList = getEm()
     			.createQuery("" +
     					"select " +
@@ -38,8 +40,30 @@ public class TopicsDao extends BaseDao
     					"  o.parentTopicId = :parentTopicId ")
     					.setParameter("parentTopicId", parentTopicId)
     					.getResultList();
+
+    	for(Topics topic : resultList)
+    	{
+    		resultMap.put(""+topic.getId(), topic);
+    	}
     	
-    	return resultList;
+    	return resultMap;
+    }
+    
+    @SuppressWarnings("unchecked")
+    public Object findTopicsWithId(long id)
+    {
+    	List<Topics> resultList = getEm()
+    			.createQuery("" +
+    					"select " +
+    					"  o " +
+    					"from " +
+    					"  Topics o " +
+    					"where " +
+    					"  o.id = :id ")
+    					.setParameter("id", id)
+    					.getResultList();
+    	
+    	return resultList.size()>0 ? resultList.get(0) : new String[]{};
     }
     
 }

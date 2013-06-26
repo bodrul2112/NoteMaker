@@ -229,5 +229,13 @@ build bread crumb
 -- other ideas --
 
 
---
+-- get json requests --
+
+http://localhost:8080/nm/topic/?topicId=1
+http://localhost:8080/nm/subtopics/?parentId=1
+
+http://localhost:8080/nm/notes/?parentId=6
+http://localhost:8080/nm/singlenote/?noteId=1
+
+
 
