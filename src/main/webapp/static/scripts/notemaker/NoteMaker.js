@@ -11,7 +11,12 @@ define(["thirdparty/jquery",
             this.m_oPage = new Page();
             this.m_oSearchResults = new SearchResults();
         }
-
+        
+        NoteMaker.prototype.onResourcesLoaded = function()
+        {
+        	this.render();
+        }
+        
         NoteMaker.prototype.render = function()
         {
         	this.m_oPage.render(this.m_eElement);

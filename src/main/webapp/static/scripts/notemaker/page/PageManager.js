@@ -32,15 +32,18 @@ define(["thirdparty/jquery",
     {
         //TODO: loading mock data, load from db later
     	
-    	$.getJSON("http://localhost:8080/notes/topics/?topicId=1",
+    	$.getJSON("http://localhost:8080/nm/subtopics/?parentId=1",
 		   function(data) {
-    		
-		     alert(data.length);
-		     for(var i=0; i<data.length; i++)
+		     for(var i in data)
 	         {
 		    	var mSubTopicData = data[i];
 	            this.m_pSubTopics.push(new SubTopic(mSubTopicData));
 	         }
+		     
+		     // cheating for now
+		     window.ResourceHandler.resourceReady("topic");
+	         window.ResourceHandler.resourceReady("subtopics");
+	         window.ResourceHandler.resourceReady("notes");
 		     
 		   }.bind(this));
     }
