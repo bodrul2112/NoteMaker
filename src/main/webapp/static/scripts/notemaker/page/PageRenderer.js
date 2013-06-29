@@ -9,7 +9,7 @@ define(["thirdparty/jquery", "services/TemplateService"], function (jQuery, tpl)
     {
     	if(this.m_oLastDrawnPage)
     	{
-    		var oPageElements = oPage.getPageElements();
+    		var oPageElements = this.m_oLastDrawnPage.getPageElements();
         	oPageElements.getTopicContainer().empty();
         	oPageElements.getSubTopicContainer().empty();
         	oPageElements.getNoteContainer().empty();

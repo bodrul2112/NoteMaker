@@ -1,17 +1,43 @@
 define(["thirdparty/jquery", "services/TemplateService"], function (jQuery, tpl) {
 
-    var Note = function ( sID, sText )
-    {
-        this.m_sID = sID;
-        this.m_sText = sText;
+    var Note = function ( mData )
+    {   	
+    	this.m_sID = mData["id"];
+        this.m_sName = mData["name"];
+        this.m_sText = "text";
+        this.m_sTimeCreated = mData["timeCreated"];
+        this.m_sTimeLastUpdated = mData["timeLastUpdated"];
+        this.m_nParentTopicId = mData["parentTopicId"];
+        this.m_sHashTags = mData["hashTags"];
+        this.m_sSpecialHashTags = mData["specialHashTags"];
+        this.m_sContent = mData["content"];
+        
+        this.m_bIsAdder = false;
 
         this.m_eElement;
-
         this.initialise();
+    }
+    
+    Note.prototype.setAsAdder = function( bIsAdder ) 
+    {
+    	this.m_bIsAdder = bIsAdder;
+    }
+    
+    Note.prototype.isAdder = function() 
+    {
+    	return this.m_bIsAdder;
     }
 
     Note.prototype.initialise = function() {
         this.m_eElement = tpl.getTemplate('.note');
+        
+        this.m_eElement.click(function(){
+        	if(this.isAdder()){
+        		alert("add new subtopic");
+        	}else{
+        		//TODO: load the topic content
+        	}
+        }.bind(this));
     }
 
     Note.prototype.getElement = function () {
@@ -52,7 +78,7 @@ define(["thirdparty/jquery", "services/TemplateService"], function (jQuery, tpl)
     
     Note.prototype.render = function() 
     {
-    	this.m_eElement.find('.note_inner').text(this.m_sText);
+    	this.m_eElement.find('.note_inner').text(this.m_sName);
     }
 
 

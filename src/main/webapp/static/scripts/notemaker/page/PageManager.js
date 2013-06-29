@@ -18,42 +18,75 @@ define(["thirdparty/jquery",
     
     /** LOADERS **/
 
-    PageManager.prototype.loadMainTopic = function() 
+    PageManager.prototype.loadPage = function( sTopicId ) 
     {
-        //TODO: loading mock data, load from db later
-        this.m_oTopic = new Topic('mainID','Main');
+    	this.resetStores();
+    	this.loadTopic( sTopicId );
+    	this.loadSubTopics( sTopicId );
+    	this.loadNotes( sTopicId );
     }
-
-    PageManager.prototype.loadTopic = function() 
+    
+    PageManager.prototype.resetStores = function() 
     {
+    	this.m_oTopic;
+        this.m_pSubTopics = [];
+        this.m_pNotes = [];
+        
+        this.addAdders();
     }
-
-    PageManager.prototype.loadSubTopics = function()
+    
+    PageManager.prototype.addAdders = function() 
     {
-        //TODO: loading mock data, load from db later
+    	var oSubTopic = new SubTopic({
+    		"name":"+"
+    	});
+    	oSubTopic.setAsAdder(true);
+    	this.m_pSubTopics.push(oSubTopic);
     	
-    	$.getJSON("http://localhost:8080/nm/subtopics/?parentId=1",
-		   function(data) {
-		     for(var i in data)
+    	var oNote = new Note({
+    		"name":"+"
+    	});
+    	oNote.setAsAdder(true);
+    	this.m_pNotes.push(oNote);
+    }
+
+    PageManager.prototype.loadTopic = function( sTopicId ) 
+    {
+    	$.getJSON("http://localhost:8080/nm/topic/?topicId=" + sTopicId, function(data) {
+		     
+        	this.m_oTopic = new Topic( data );
+		    window.ResourceHandler.resourceReady("topic");
+		     
+		 }.bind(this));
+    }
+
+    PageManager.prototype.loadSubTopics = function( sTopicId )
+    {
+    	$.getJSON("http://localhost:8080/nm/subtopics/?parentId=" + sTopicId, function(data) {
+		     
+    		 for(var i in data)
 	         {
 		    	var mSubTopicData = data[i];
 	            this.m_pSubTopics.push(new SubTopic(mSubTopicData));
 	         }
-		     
-		     // cheating for now
-		     window.ResourceHandler.resourceReady("topic");
 	         window.ResourceHandler.resourceReady("subtopics");
-	         window.ResourceHandler.resourceReady("notes");
 		     
-		   }.bind(this));
+		 }.bind(this));
     }
 
-    PageManager.prototype.loadNotes = function()
+    PageManager.prototype.loadNotes = function( sTopicId )
     {
-        for(var i=0; i<25; i++)
-        {
-            this.m_pNotes.push(new Note("id"+i, "Note " + i));
-        }
+    	$.getJSON("http://localhost:8080/nm/notes/?parentId=" + sTopicId, function(data) {
+		     
+   		 	for(var i in data)
+	        {
+		    	var mNotesData = data[i];
+	            this.m_pNotes.push(new Note(mNotesData));
+	        }
+	        window.ResourceHandler.resourceReady("notes");
+		     
+		 }.bind(this));
+    	
     }
     
     /** ADDERS **/

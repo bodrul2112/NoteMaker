@@ -4,15 +4,33 @@ define(["thirdparty/jquery", "services/TemplateService"], function (jQuery, tpl)
     {
         this.m_sID = mSubTopicData["id"];
         this.m_sName = mSubTopicData["name"];
-        
         this.m_nParentTopicId = mSubTopicData["parentTopicId"];
+        
+        this.m_bIsAdder = false;
 
         this.m_eElement;
         this.initialise();
     }
+    
+    SubTopic.prototype.setAsAdder = function( bIsAdder ) {
+    	this.m_bIsAdder = true;
+    }
+    
+    SubTopic.prototype.isAdder = function() 
+    {
+    	return this.m_bIsAdder;
+    }
 
     SubTopic.prototype.initialise = function() {
         this.m_eElement = tpl.getTemplate('.sub_topic');
+        
+        this.m_eElement.click(function(){
+        	if(this.isAdder()){
+        		alert("add new subtopic");
+        	}else{
+        		window.ResourceHandler.loadTopic( this.m_sID );
+        	}
+        }.bind(this));
     }
 
     SubTopic.prototype.getID = function() {

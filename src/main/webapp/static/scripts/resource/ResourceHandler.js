@@ -41,7 +41,30 @@ define(["thirdparty/jquery"],
         	}
         }
         
+        ResourceHandler.prototype.loadTopic = function( sTopicName )
+        {
+        	this._resetExpectedResources();
+        	
+        	for(var i=0; i<this.m_pListeners.length; i++)
+        	{
+        		var oListener = this.m_pListeners[i];
+        		
+        		if(oListener.onLoadTopic)
+        		{
+        			oListener.onLoadTopic( sTopicName );
+        		}
+        	}
+        }
+        
         //PRIVATE METHODS
+        
+        ResourceHandler.prototype._resetExpectedResources = function()
+        {
+        	for(var key in this.m_mExpectedResources)
+        	{
+        		this.m_mExpectedResources[key] = "expected";
+        	}
+        }
         
         ResourceHandler.prototype._isAllResourcesReady = function()
         {

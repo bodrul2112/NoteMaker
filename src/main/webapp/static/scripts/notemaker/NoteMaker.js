@@ -17,6 +17,11 @@ define(["thirdparty/jquery",
         	this.render();
         }
         
+        NoteMaker.prototype.onLoadTopic = function( sTopicId )
+        {
+        	this.m_oPage.getPageManager().loadPage( sTopicId );
+        }
+        
         NoteMaker.prototype.render = function()
         {
         	this.m_oPage.render(this.m_eElement);

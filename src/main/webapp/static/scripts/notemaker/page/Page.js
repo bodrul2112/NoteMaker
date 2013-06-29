@@ -17,9 +17,7 @@ define(["thirdparty/jquery",
     
     Page.prototype.initialise = function( eNoteMakerContainer ) 
     {
-    	this.m_oPageManager.loadMainTopic( this );
-    	this.m_oPageManager.loadSubTopics( this );
-    	this.m_oPageManager.loadNotes( this );
+    	this.m_oPageManager.loadPage(1);
     }
     
     Page.prototype.loadMainPage = function( eNoteMakerContainer ) 

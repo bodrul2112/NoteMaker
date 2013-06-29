@@ -1,17 +1,25 @@
 define(["thirdparty/jquery", "services/TemplateService"], function (jQuery, tpl) {
 
-    var Topic = function( sID, sName )
+    var Topic = function( mData )
     {
-        this.m_sID = sID;
-        this.m_sName = sName;
+        this.m_nID = mData["id"];
+        this.m_sName = mData["name"];
+        this.m_nParentId = mData["parentTopicId"];
 
         this.m_eElement;
+        this.m_ePreviousTopic;
         
         this.initialise();
     }
 
     Topic.prototype.initialise = function() {
         this.m_eElement = tpl.getTemplate('.topic');
+        
+        this.m_ePreviousTopic = this.m_eElement.find('.previous_topic');
+        
+        this.m_ePreviousTopic.click(function(){
+        	window.ResourceHandler.loadTopic( this.m_nParentId );
+        }.bind(this));
     }
     
     Topic.prototype.getID = function() {
