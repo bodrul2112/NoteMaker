@@ -11,7 +11,7 @@ define(["thirdparty/jquery", "services/TemplateService"], function (jQuery, tpl)
 
     NewTopicInput.prototype.initialise = function() 
     {
-        this.m_eElement = tpl.getTemplate('.input_new_sub_topic');
+        this.m_eElement = tpl.getTemplate('.input_new_note');
     }
     
     NewTopicInput.prototype.getElement = function() {

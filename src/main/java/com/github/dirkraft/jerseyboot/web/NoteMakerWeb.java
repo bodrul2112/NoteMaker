@@ -1,5 +1,6 @@
 package com.github.dirkraft.jerseyboot.web;
 
+import java.util.Date;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -66,6 +67,35 @@ public class NoteMakerWeb extends BaseJsonResource {
 		topic.setParentTopicId(Integer.parseInt(postData.get("parentTopicId")));
 		
 		DatabaseManager.INSTANCE.getTopicsDao().addTopic(topic);
+		
+		return Response.status(200).entity(result).build();
+    }
+	
+	@POST
+	@Path("/newnote")
+	@Consumes({"application/xml", "application/json"})
+	@Produces({"application/xml", "application/json"})
+	public Response  addNewNote(Map<String,String> postData) 
+	{
+		String result = "new note created";
+		
+		Notes note = new Notes();
+		
+		String[] expectedParams = new String[]{"name","parentTopicId"};
+		
+		for(String key : expectedParams)
+		{
+			if(postData.get(key) == null || postData.get(key).equals(""))
+			{
+				throw new RuntimeException("sad times with this new notw");
+			}
+		}
+		
+		note.setName(postData.get("name"));
+		note.setParentTopicId(Integer.parseInt(postData.get("parentTopicId")));
+		note.setTimeCreated(new Date(System.currentTimeMillis()));
+		
+		DatabaseManager.INSTANCE.getNotesDao().addNote(note);
 		
 		return Response.status(200).entity(result).build();
     }

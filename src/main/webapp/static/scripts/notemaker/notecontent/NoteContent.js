@@ -17,6 +17,7 @@ define(["thirdparty/jquery", "services/TemplateService"], function (jQuery, tpl)
     	this.m_eElement = $('.sliding_page_three');
     	this.m_eSaveButton = this.m_eElement.find('.save');
     	this.m_eText = this.m_eElement.find('.input');
+    	this.m_eText.text("");
     	
     	this.m_eSaveButton.click(function(){
     		this.onSaveNoteContent();
@@ -26,7 +27,8 @@ define(["thirdparty/jquery", "services/TemplateService"], function (jQuery, tpl)
     NoteContent.prototype.onLoadNoteContent = function( mData )
     {
     	this.m_mLastData = mData;
-    	this.m_eText.text(mData["content"]);
+    	this.m_eText.val('');
+    	this.m_eText.val(mData["content"]);
     }
     
     NoteContent.prototype.onSaveNoteContent = function() {
@@ -45,9 +47,6 @@ define(["thirdparty/jquery", "services/TemplateService"], function (jQuery, tpl)
             dataType: "text"
         }).done(function() {
         	alert("succces");
-        	window.PageEventHandler.triggerEvent( "onHideBlind", {});
-        	window.ResourceHandler.loadTopic( this.m_nParentTopicId ); 
-        	
         }.bind(this))
         .fail(function(xhr, textStatus, thrownError) { alert("error " + textStatus); console.log(xhr, textStatus, thrownError);})
 		

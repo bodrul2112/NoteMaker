@@ -135,7 +135,7 @@
 	background-color: black;
 }
 
-.input_blind .input_new_sub_topic {
+.input_blind .input_new {
 	background-color: rgb(59,97,142);
 	width: 85%;
 	position: absolute;
@@ -146,7 +146,7 @@
 	border-right: 0px;
 }
 
-.input_new_sub_topic .name {
+.input_new .name {
 	position: absolute;
 	left: 20px;
 	font-size: 25px;
@@ -154,8 +154,8 @@
 	top: 17px;
 }
 
-.input_new_sub_topic .add,
-.input_new_sub_topic .cancel {
+.input_new .add,
+.input_new .cancel {
 	
 	position: absolute;
 	color: white;
@@ -169,11 +169,11 @@
 	line-height: 32px;
 }
 
-.input_new_sub_topic .add:hover,
-.input_new_sub_topic .cancel:hover {
+.input_new .add:hover,
+.input_new .cancel:hover {
 	background-color: rgb(171,108,0);
 }
 
-.input_new_sub_topic .cancel {
+.input_new .cancel {
 	left: 155px;
 }

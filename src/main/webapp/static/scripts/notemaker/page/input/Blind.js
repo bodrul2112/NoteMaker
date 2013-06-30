@@ -38,7 +38,7 @@ define(["thirdparty/jquery",
     }
     
     Blind.prototype.showBlind = function( mData ) {
-    	
+    	debugger;
     	this.m_eElement.show();
     	this.m_oNewTopicInput.remove();
     	this.m_oNewNoteInput.remove();
@@ -46,6 +46,11 @@ define(["thirdparty/jquery",
     	{
     		this.m_oNewTopicInput.setParentTopicId( mData["parentTopicId"] );
     		this.m_oNewTopicInput.render();
+    	}
+    	else if( mData["inputType"] == "newnote" )
+    	{
+    		this.m_oNewNoteInput.setParentTopicId( mData["parentTopicId"] );
+    		this.m_oNewNoteInput.render();
     	}
     }
 

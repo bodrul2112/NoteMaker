@@ -33,11 +33,19 @@ define(["thirdparty/jquery", "services/TemplateService"], function (jQuery, tpl)
         
         this.m_eElement.click(function(){
         	if(this.isAdder()){
-        		alert("add new subtopic");
+        		
+        		window.PageEventHandler.triggerEvent( "onShowBlind", 
+        				{ 
+        					"inputType":"newnote",
+        					"parentTopicId": this.m_nParentTopicId
+        				} );
+        		
         	}else{
         		//TODO: this code aint so great
+        		debugger;
         		$.getJSON("http://localhost:8080/nm/singlenote/?noteId=" + this.m_sID, function(data) {
        		     
+        			debugger;
         			data["obj"] = this;
         	        window.PageEventHandler.triggerEvent("onLoadNoteContent",data);
         		     

@@ -72,6 +72,14 @@ public class NotesDao extends BaseDao
     	em.getTransaction().commit();
 		
 	}
+
+	public void addNote(Notes note)
+	{
+		EntityManager em = getEm();
+    	em.getTransaction().begin();
+    	em.persist(note);
+    	em.getTransaction().commit();
+	}
 	
 	
 }
