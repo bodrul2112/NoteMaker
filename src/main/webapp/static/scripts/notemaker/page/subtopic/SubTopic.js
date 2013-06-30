@@ -27,32 +27,20 @@ define(["thirdparty/jquery", "services/TemplateService"], function (jQuery, tpl)
         this.m_eElement.click(function(){
         	if(this.isAdder()){
 
-        		//TODO: gotta clean up this code later
+        		//this.addNewSubTopicToDB();
         		
-        		var postData = {
-        				"name":"World",
-        				"parentTopicId": this.m_nParentTopicId
-        		}
-        		
-        		$.ajax({
-                    type: "POST",
-                    contentType: "application/json; charset=utf-8",
-                    url: "/nm/newsubtopic",
-                    data: JSON.stringify(postData),
-                    dataType: "text"
-                }).done(function() {
-                	alert("succces");
-                	window.ResourceHandler.loadTopic( this.m_nParentTopicId ); 
-                	
-                }.bind(this))
-                .fail(function(xhr, textStatus, thrownError) { alert("error " + textStatus); console.log(xhr, textStatus, thrownError);})
+        		window.PageEventHandler.triggerEvent( "onShowBlind", 
+        				{ 
+        					"inputType":"newsubtopic",
+        					"parentTopicId": this.m_nParentTopicId
+        				} );
         		
         	}else{
         		window.ResourceHandler.loadTopic( this.m_sID );
         	}
         }.bind(this));
     }
-
+    
     SubTopic.prototype.getID = function() {
         return this.m_sID;
     }

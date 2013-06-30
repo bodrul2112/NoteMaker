@@ -3,12 +3,15 @@ define(["thirdparty/jquery",
         "notemaker/page/topic/Topic",
         "notemaker/page/subtopic/SubTopic",
         "notemaker/page/note/Note",
-        "notemaker/page/quicktext/QuickText"
+        "notemaker/page/quicktext/QuickText",
+        "notemaker/page/input/Blind"
         ], 
-		function (jQuery, tpl, Topic, SubTopic, Note, QuickText) {
+		function (jQuery, tpl, Topic, SubTopic, Note, QuickText, Blind) {
 
     var PageManager = function ()
     {
+    	this.m_oBlind = new Blind();
+    	
         this.m_oTopic;
         this.m_pSubTopics = [];
         this.m_pNotes = [];
@@ -117,6 +120,11 @@ define(["thirdparty/jquery",
     PageManager.prototype.getNotes = function()
     {
     	return this.m_pNotes;
+    }
+    
+    PageManager.prototype.getBlind = function()
+    {
+    	return this.m_oBlind;
     }
 
     return PageManager;
