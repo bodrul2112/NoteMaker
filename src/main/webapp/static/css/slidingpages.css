@@ -53,16 +53,14 @@
 .sliding_page_three .content .input {
     position: absolute;
     left: 0px;
-    width: 102%;
+    width: 100%;
     height: 95%;
     background-color: transparent;
     border: none;
     resize: none;
     outline: none;
-    font-family: Didot, 'Didot LT STD', 'Hoefler Text', Garamond, 'Times New Roman', serif;
-    font-size: 18px;
-    
-    font-weight:bold;
+    font-family: segan_light;
+    font-size: 14px;
     color:white;
 }
 

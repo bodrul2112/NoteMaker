@@ -35,4 +35,9 @@ html,body {
 	src: url('timeburner_regular.ttf');
 }
 
+@font-face {
+	font-family: segan_light;
+	src: url('Segan-Light.ttf');
+}
+
 
