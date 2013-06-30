@@ -26,7 +26,27 @@ define(["thirdparty/jquery", "services/TemplateService"], function (jQuery, tpl)
         
         this.m_eElement.click(function(){
         	if(this.isAdder()){
-        		alert("add new subtopic");
+
+        		//TODO: gotta clean up this code later
+        		
+        		var postData = {
+        				"name":"World",
+        				"parentTopicId": this.m_nParentTopicId
+        		}
+        		
+        		$.ajax({
+                    type: "POST",
+                    contentType: "application/json; charset=utf-8",
+                    url: "/nm/newsubtopic",
+                    data: JSON.stringify(postData),
+                    dataType: "text"
+                }).done(function() {
+                	alert("succces");
+                	window.ResourceHandler.loadTopic( this.m_nParentTopicId ); 
+                	
+                }.bind(this))
+                .fail(function(xhr, textStatus, thrownError) { alert("error " + textStatus); console.log(xhr, textStatus, thrownError);})
+        		
         	}else{
         		window.ResourceHandler.loadTopic( this.m_sID );
         	}

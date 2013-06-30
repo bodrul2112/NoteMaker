@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
+import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 
 import com.bodrul2112.db.entity.Topics;
@@ -65,5 +66,13 @@ public class TopicsDao extends BaseDao
     	
     	return resultList.size()>0 ? resultList.get(0) : new String[]{};
     }
+    
+    public void addTopic(Topics topic)
+	{
+    	EntityManager em = getEm();
+    	em.getTransaction().begin();
+    	em.persist(topic);
+    	em.getTransaction().commit();
+	}
     
 }

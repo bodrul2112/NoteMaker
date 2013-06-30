@@ -20,31 +20,33 @@ define(["thirdparty/jquery",
 
     PageManager.prototype.loadPage = function( sTopicId ) 
     {
-    	this.resetStores();
+    	this.resetStores( sTopicId );
     	this.loadTopic( sTopicId );
     	this.loadSubTopics( sTopicId );
     	this.loadNotes( sTopicId );
     }
     
-    PageManager.prototype.resetStores = function() 
+    PageManager.prototype.resetStores = function( sTopicId ) 
     {
     	this.m_oTopic;
         this.m_pSubTopics = [];
         this.m_pNotes = [];
         
-        this.addAdders();
+        this.addAdders( sTopicId );
     }
     
-    PageManager.prototype.addAdders = function() 
+    PageManager.prototype.addAdders = function( sTopicId ) 
     {
     	var oSubTopic = new SubTopic({
-    		"name":"+"
+    		"name":"+",
+    		"parentTopicId":sTopicId
     	});
     	oSubTopic.setAsAdder(true);
     	this.m_pSubTopics.push(oSubTopic);
     	
     	var oNote = new Note({
-    		"name":"+"
+    		"name":"+",
+    		"parentTopicId":sTopicId
     	});
     	oNote.setAsAdder(true);
     	this.m_pNotes.push(oNote);
