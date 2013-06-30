@@ -35,7 +35,13 @@ define(["thirdparty/jquery", "services/TemplateService"], function (jQuery, tpl)
         	if(this.isAdder()){
         		alert("add new subtopic");
         	}else{
-        		//TODO: load the topic content
+        		//TODO: this code aint so great
+        		$.getJSON("http://localhost:8080/nm/singlenote/?noteId=" + this.m_sID, function(data) {
+       		     
+        			data["obj"] = this;
+        	        window.PageEventHandler.triggerEvent("onLoadNoteContent",data);
+        		     
+        		 }.bind(this));
         	}
         }.bind(this));
     }

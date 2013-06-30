@@ -2,13 +2,16 @@
 define(["thirdparty/jquery",
     "services/TemplateService",
     "notemaker/page/Page",
-    "notemaker/searchresults/SearchResults"],
+    "notemaker/searchresults/SearchResults",
+    "notemaker/notecontent/NoteContent"
+    ],
 
-    function(jQuery, tpl, Page, SearchResults) {
+    function(jQuery, tpl, Page, SearchResults, NoteContent) {
 
         var NoteMaker = function( )
         {
             this.m_oPage = new Page();
+            this.m_oNoteContent = new NoteContent();
             this.m_oSearchResults = new SearchResults();
         }
         
@@ -38,7 +41,10 @@ define(["thirdparty/jquery",
             this.m_oSearchResults.render(this.m_eElement);
         }
         
+        NoteMaker.prototype.onLoadNoteContent = function( mData )
+        {
+        	this.m_oNoteContent.onLoadNoteContent( mData );
+        }
         
-
         return NoteMaker;
 });

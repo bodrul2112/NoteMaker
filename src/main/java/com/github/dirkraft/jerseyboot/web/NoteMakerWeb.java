@@ -69,6 +69,19 @@ public class NoteMakerWeb extends BaseJsonResource {
 		
 		return Response.status(200).entity(result).build();
     }
+	
+	@POST
+	@Path("/updatenote")
+	@Consumes({"application/xml", "application/json"})
+	@Produces({"application/xml", "application/json"})
+	public Response  updateNotes(Map<String,String> postData) 
+	{
+		String result = "updated note";
+		
+		DatabaseManager.INSTANCE.getNotesDao().updateNote(postData);
+		
+		return Response.status(200).entity(result).build();
+	}
 
 	@GET
 	@Path("/singlenote")

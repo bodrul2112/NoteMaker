@@ -34,6 +34,12 @@ define(["thirdparty/jquery", "services/TemplateService"], function (jQuery, tpl)
     		var sNewTopicName = this.m_eElement.find('.name').val();
         	this.addNewSubTopicToDB( sNewTopicName );
         }.bind(this));
+    	
+    	this.m_eElement.find('.cancel').click(function(){
+    		window.PageEventHandler.triggerEvent( "onHideBlind", {});
+    		window.ResourceHandler.loadTopic( this.m_nParentTopicId ); 
+        }.bind(this));
+    	
     }
     
     NewTopicInput.prototype.addNewSubTopicToDB = function(sTopicName) {
@@ -43,7 +49,7 @@ define(["thirdparty/jquery", "services/TemplateService"], function (jQuery, tpl)
 				"name":sTopicName,
 				"parentTopicId": this.m_nParentTopicId
 		}
-		debugger;
+
 		$.ajax({
             type: "POST",
             contentType: "application/json; charset=utf-8",

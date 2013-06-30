@@ -154,20 +154,26 @@
 	top: 17px;
 }
 
-.input_new_sub_topic .add {
+.input_new_sub_topic .add,
+.input_new_sub_topic .cancel {
 	
 	position: absolute;
 	color: white;
 	background-color: rgb(201,137,9);
 	width: 82px;
 	height: 32px;
-	left: 104px;
+	left: 58px;
 	top: 77px;
 	border: 2px solid white;
 	text-align: center;
 	line-height: 32px;
 }
 
-.input_new_sub_topic .add:hover {
+.input_new_sub_topic .add:hover,
+.input_new_sub_topic .cancel:hover {
 	background-color: rgb(171,108,0);
+}
+
+.input_new_sub_topic .cancel {
+	left: 155px;
 }

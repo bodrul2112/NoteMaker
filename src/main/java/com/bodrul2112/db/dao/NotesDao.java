@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
+import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 
 import com.bodrul2112.db.entity.Notes;
@@ -58,6 +59,19 @@ public class NotesDao extends BaseDao
     	
     	return resultList.size()>0 ? resultList.get(0) : new String[]{};
     }
+
+	public void updateNote(Map<String, String> postData)
+	{
+		// TODO Auto-generated method stub
+		Notes note = (Notes) findNoteWithId(Integer.parseInt(postData.get("id")));
+		note.setContent(postData.get("content"));
+		
+		EntityManager em = getEm();
+    	em.getTransaction().begin();
+    	em.persist(note);
+    	em.getTransaction().commit();
+		
+	}
 	
 	
 }

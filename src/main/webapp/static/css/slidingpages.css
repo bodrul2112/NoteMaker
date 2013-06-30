@@ -47,6 +47,7 @@
     width: 97%;
     height: 90%;
     overflow: hidden;
+    top:10%;
 }
 
 .sliding_page_three .content .input {
@@ -63,4 +64,23 @@
     
     font-weight:bold;
     color:white;
+}
+
+.sliding_page_three .save {
+
+	position: absolute;
+	color: white;
+	background-color: rgb(59,97,142);
+	left: 40px;
+	top: 17px;
+	height: 33px;
+	width: 93px;
+	border: 3px solid white;
+	font-size: 16px;
+	text-align: center;
+	line-height: 36px;
+}
+
+.sliding_page_three .save:hover {
+	background-color: black;
 }
