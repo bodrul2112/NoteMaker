@@ -42,12 +42,12 @@
 
 .sliding_page_three .content {
     background-color: #888;
-    position: absolute;
-    left: 17px;
-    width: 97%;
-    height: 90%;
-    overflow: hidden;
-    top:10%;
+	position: absolute;
+	left: 40px;
+	width: 87%;
+	height: 87%;
+	overflow: hidden;
+	top: 10%;
 }
 
 .sliding_page_three .content .input {
