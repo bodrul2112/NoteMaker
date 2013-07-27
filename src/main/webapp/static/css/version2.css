@@ -1,0 +1,97 @@
+
+html,body {
+	
+	height:100%;
+	width:100%;
+	padding: 0px;
+	margin: 0px;
+
+}
+
+.notemaker_wrapper {
+	padding:0px;
+    margin: 0px;
+    position: absolute;
+
+    height: 100%;
+    width: 100%;
+
+    top: 0px;
+    left: 0px;
+}
+
+.page {
+	width: 663px;
+	height: 100%;
+}
+
+.templates {
+	display: none; 
+}
+
+.topics {
+	height: 100%;
+	width: 100%;
+}
+
+.topicsLine {
+	position: absolute;
+	background-color: rgb(192,0,0);
+	width: 2px;
+	height: 90%;
+	left: 15px;
+}
+
+.topic {
+	border: 1px solid rgb(192,0,0);
+	width: 584px;
+	height: 56px;
+	margin-left: 16px;
+	margin-top: 19px;
+	font-family: Calibri;
+	font-weight: bold;
+	font-style: italic;
+	color: rgb(192,0,0);
+	background-color: rgb(243,220,220);
+}
+
+.topicContents {
+	
+}
+
+.topicContents .first {
+	margin-top: 36px;
+}
+
+.note {
+	width: 584px;
+	height: 97px;
+	margin-left: 53px;
+	background-color: rgb(220,230,242);
+	margin-top: 11px;
+}
+
+.noteNewButton {
+	width: 584px;
+	height: 56px;
+	margin-left: 53px;
+	background-color: rgb(220,230,242);
+	color: rgb(59,97,142);
+	font-family: Calibri;
+	font-weight: bold;
+	font-style: italic;
+	margin-top: 11px;
+	resize: vertical;
+}
+
+.noteTextArea {	
+	height: 74px;
+	width: 560px;
+	background-color: rgb(220,230,242);
+	border: none;
+	resize: vertical;
+	font-family: Calibri;
+	font-style: italic;
+	font-size: 14px;
+	margin: 7px;
+}
